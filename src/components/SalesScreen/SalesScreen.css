@@ -1,0 +1,87 @@
+/* src/components/SalesScreen/SalesScreen.css */
+.sales-screen-container {
+  font-family: 'Arial', sans-serif;
+  direction: rtl; /* للغة العربية */
+  text-align: right;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+.sales-screen-container h2 {
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+.section-card {
+  margin-bottom: 25px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+
+.section-card h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.grid-2-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.grid-3-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-card label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #444;
+}
+
+.section-card input[type="text"],
+.section-card input[type="number"],
+.section-card select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* لضمان أن العرض يشمل الحشو والحدود */
+}
+
+.section-card input[readOnly] {
+  background-color: #f5f5f5;
+  color: #777;
+}
+
+.section-card button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.section-card button:hover {
+  opacity: 0.9;
+}

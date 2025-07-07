@@ -4,7 +4,7 @@ import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Users from './pages/Users';
-import Salespage from './pages/Salespage'
+import SalesScreen from './components/SalesScreen/SalesScreen'
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     !!localStorage.getItem('authToken')
@@ -29,7 +29,7 @@ export default function App() {
         } />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
-       <Route path="/Salespage" element={<Salespage />} />
+       <Route path="/SalesScreen" element={<SalesScreen />} />
         <Route path="/dashboard" element={
           isAuthenticated ? <Dashboard /> : <Navigate to="/login" />
         } >
