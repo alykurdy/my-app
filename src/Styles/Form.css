@@ -1,0 +1,144 @@
+/* RTL Layout */
+body, .form-container, .edit-form, .table-container {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* جدول المستخدمين */
+.table-container {
+  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.table-container h2 {
+  text-align: center;
+  padding: 15px;
+  background-color: #f3f3f3;
+  margin: 0;
+  font-size: 22px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  color: #333;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* نموذج التعديل */
+.edit-form {
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+}
+
+.edit-form h3 {
+  margin-bottom: 15px;
+ 
+}
+
+.edit-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* نموذج الإضافة */
+.form-container {
+  max-width: 800px;
+  margin: 10px auto;
+  background-color: #b1dff1;
+     align-items: center;
+    flex-direction: column;
+display: flex;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  direction: rtl;
+}
+
+.form-container h3 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 22px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+ margin-right: 20px;
+
+}
+
+.form-group input {
+  width: 80%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+  text-align: right;
+   margin-right: 20px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #7dfd0d;
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.2);
+}
+
+.form-submit-button {
+  width: 40%;
+  padding: 12px;
+  background-color: #0d6efd;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  margin-right: 80px;
+}
+
+.form-submit-button:hover {
+  background-color: #084298;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}

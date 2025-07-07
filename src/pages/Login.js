@@ -1,12 +1,10 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import '../index.css';
 
 export default function Login() {
   const [name, setName] = useState('');
-
   const [password, setPassword] = useState('');
- 
   const [accept, setAccept] = useState(false);
   const [error, setError] = useState('');
 
@@ -15,47 +13,43 @@ export default function Login() {
     setAccept(true);
     setError('');
 
-    // التحقق من صحة البيانات
     if (password.length < 8) {
       setError('يجب أن تكون كلمة المرور 8 أحرف على الأقل');
       return;
-    }          
-
+    }
 
     try {
       const response = await axios.post('http://127.0.0.1:8000/api/login', {
-        name: name, 
+        name: name,
         password: password,
       });
 
-      
-       if (response.status === 201 || response.status === 200) {
-        window.localStorage.setItem('authToken', response.data.token);
+      if (response.status === 200 || response.status === 201) {
+        const { token, user } = response.data;
 
-        window.location.pathname = '/home';
+        // تخزين التوكن وبيانات المستخدم
+        window.localStorage.setItem('authToken', token);
+        window.localStorage.setItem('userData', JSON.stringify(user));
+
+        // توجيه المستخدم للداشبورد
+        window.location.pathname = '/Dashboard';
       }
-      // إعادة تعيين الحقول بعد التسجيل الناجح
+
       setName('');
-      
       setPassword('');
-      
     } catch (error) {
-      console.error('حدث خطأ أثناء تسجيل المستخدم:', error);
+      console.error('حدث خطأ أثناء تسجيل الدخول:', error);
       if (error.response) {
-        // عرض رسالة الخطأ من الخادم إن وجدت
-        setError(error.response.data.message || 'حدث خطأ أثناء التسجيل');
+        setError(error.response.data.message || 'حدث خطأ أثناء تسجيل الدخول');
       } else {
         setError('حدث خطأ في الاتصال بالخادم');
       }
     }
   }
-  
 
   return (
     <div className="father">
       <div className="register">
-        
-
         {error && <div className="error-message">{error}</div>}
 
         <form onSubmit={submit}>
@@ -69,8 +63,6 @@ export default function Login() {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-
-         
 
           <label htmlFor="password">كلمة المرور:</label>
           <input
@@ -86,11 +78,9 @@ export default function Login() {
             <p className="error-text">يجب أن تكون كلمة المرور 8 أحرف على الأقل</p>
           )}
 
-         
-          
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
             <button type="submit" className="signup-button">
-                تسجيل الدخول
+              تسجيل الدخول
             </button>
           </div>
         </form>

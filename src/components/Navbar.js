@@ -1,7 +1,8 @@
+import "../Styles/Dashboard.css";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-export default function Header() {
+export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -21,19 +22,21 @@ export default function Header() {
   };
 
   return (
-    <header style={{ padding: '20px', background: '#f5f5f5', display: 'flex', justifyContent: 'space-between' }}>
-      <h2>نظام الحسابات</h2>
-
+    <div style={{ padding: '20px', background: '#f5f5f5', display: 'flex', justifyContent: 'space-between' }}>
+      <h2>مرحبا بك </h2>
+        <div>
       {!isAuthenticated ? (
         <nav style={{ display: 'flex', gap: '15px' }}>
           <Link to="/register">تسجيل مستخدم جديد</Link>
           <Link to="/login">تسجيل الدخول</Link>
         </nav>
       ) : (
-        <button onClick={handleLogout} style={{ padding: '5px 10px' }}>
+       
+        <button className="soft-button" onClick={handleLogout} style={{ padding: '5px 10px' }}>
           تسجيل الخروج
         </button>
       )}
-    </header>
+      </div>
+    </div>
   );
 }

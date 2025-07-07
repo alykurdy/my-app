@@ -6,7 +6,7 @@ input, textarea, select {
   direction: rtl;
   text-align: right;
 }
-/*header*/
+/*Navbar*/
 .d-flex {
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,7 @@ body {
 
 }
 
-.header {
+.Navbar {
   background-color: #2c64d3;
   padding: 10px;
   color: white;

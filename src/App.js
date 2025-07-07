@@ -1,12 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Users from './pages/Users';
-
+import Salespage from './pages/Salespage'
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     !!localStorage.getItem('authToken')
@@ -23,7 +21,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      {!window.location.pathname.startsWith('/dashboard') && <Header />}
+      {!window.location.pathname.startsWith('/dashboard')}
       
       <Routes>
         <Route path="/dashboard" element={
@@ -31,8 +29,7 @@ export default function App() {
         } />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Home />} />
+       <Route path="/Salespage" element={<Salespage />} />
         <Route path="/dashboard" element={
           isAuthenticated ? <Dashboard /> : <Navigate to="/login" />
         } >
