@@ -85,3 +85,12 @@
 .section-card button:hover {
   opacity: 0.9;
 }
+/* في src/components/SalesScreen/SalesScreen.css */
+/* ... */
+.grid-3-cols { /* يمكنك إعادة تسميتها إلى .grid-dynamic-cols مثلاً */
+  display: grid;
+  /* تغيير هذا السطر لـ 4 أعمدة متساوية */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+}
+/* ... */
